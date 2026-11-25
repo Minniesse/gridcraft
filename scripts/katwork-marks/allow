@@ -1,0 +1,35 @@
+# Lines that may still name ArtCraft: <path><TAB><the whole line>. Each has its reason in KATWORK.md.
+apps/gridcraft/src/build_flavor.rs	        assert!(result.unwrap_err().contains("ArtCraft Launcher"));
+apps/gridcraft/src/build_flavor.rs	        (BuildFlavor::NightlyV1, false) => Err("Open GridCraft Nightly from ArtCraft Launcher".into()),
+apps/gridcraft/src/profile_root.rs	            assert!(!base.join("ArtCraft/GridCraft").exists());
+apps/gridcraft/src/profile_root.rs	        assert!(fixture.check(Platform::Mac, &fixture.home().join("Library/Application Support/ArtCraft/nightly/profiles/gridcraft")).is_ok());
+apps/gridcraft/src/profile_root.rs	            assert!(fixture.check(Platform::Windows, &base.join("ArtCraft/GridCraft/nightly")).is_err(), "{key}");
+apps/gridcraft/src/profile_root.rs	                .check(Platform::Windows, &PathBuf::from(fixture.get("LOCALAPPDATA").unwrap()).join("Programs/ArtCraft/GridCraft/nightly"))
+apps/gridcraft/src/profile_root.rs	                    &PathBuf::from(fixture.get("LOCALAPPDATA").unwrap()).join("Programs/ArtCraft/ArtCraftLauncher/nightly/gridcraft")
+apps/gridcraft/src/profile_root.rs	                    roots.push(absolute(PathBuf::from(base), key)?.join("ArtCraft").join("GridCraft"));
+apps/gridcraft/src/profile_root.rs	            roots.push(required_base(env, "LOCALAPPDATA")?.join("Programs").join("ArtCraft").join("GridCraft"));
+crates/ui-egui/src/app/prefs.rs	            self.message = Some((crate::channel::name().into(), "GridCraft Nightly is updated by ArtCraft Launcher.".into()));
+crates/ui-egui/src/dialogs/about.rs	            ui.label("Based on GridCraft by the ArtCraft team (https://github.com/storytold/gridcraft). This build is not an ArtCraft product.");
+docs/releasing.md	  `%LOCALAPPDATA%\Programs\ArtCraft\GridCraft`, per-machine into `Program Files\ArtCraft\GridCraft` (`Program Files (x86)` for the 32-bit build),
+.github/workflows/release.yml	      ARTCRAFT_SERVICES_DISPATCH_TOKEN: ${{ secrets.ARTCRAFT_SERVICES_DISPATCH_TOKEN }}
+.github/workflows/windows-arm64.yml	      install-relative-path: Programs/ArtCraft/GridCraft
+LICENSE-MIT	Copyright (c) 2026 ArtCraft Team and the GridCraft contributors
+NOTICE	Copyright (c) 2026 ArtCraft Team and the GridCraft contributors.
+packaging/linux/flatpak/ai.storyteller.gridcraft.bundle.yml	  - --filesystem=xdg-data/ArtCraft/versions:ro
+packaging/linux/flatpak/ai.storyteller.gridcraft.yml	  - --filesystem=xdg-data/ArtCraft/versions:ro
+packaging/windows/check-install-policy.ps1	      $directories['CraftSuiteFolder'][1] -ne 'ArtCraft') { throw 'Expected the app under the ArtCraft suite folder.' }
+packaging/windows/check-install-policy.ps1	  $machineFolder = (Join-Path $machineRoot "ArtCraft\$($policy.name)") + '\'
+packaging/windows/check-install-policy.ps1	    $wanted = if ($scope -eq '1') { $machineFolder } else { (Join-Path $env:LOCALAPPDATA "Programs\ArtCraft\$($policy.name)") + '\' }
+packaging/windows/check-install-policy.ps1	    if ($dirs['INSTALLFOLDER'][0] -ne 'CraftSuiteFolder' -or $dirs['CraftSuiteFolder'][1] -ne 'ArtCraft' -or
+packaging/windows/check-install-policy.ps1	      throw 'Launcher new-install folder must be under the per-user ArtCraft suite root.'
+packaging/windows/check-install-policy.ps1	    Write-Output 'PASS ArtCraft Launcher: per-user scope, suite folder, remembered/custom paths and existing registration. No installation performed.'
+packaging/windows/gridcraft.wxs	      <Directory Id="CraftSuiteFolder" Name="ArtCraft">
+packaging/windows/INSTALLATION.md	New installations default to the current account under `Programs\ArtCraft\<App>`.
+packaging/windows/install-policy.wxi	      <Control Id="Info" Type="Text" X="20" Y="50" Width="330" Height="30" Text="{\CraftScopeText}An update keeps the existing folder. New copies use the ArtCraft folder under Programs." />
+packaging/windows/install-policy.wxi	  <SetProperty Id="INSTALLFOLDER" Action="CraftDefaultMachineFolder32" Value="[%ProgramFiles]\ArtCraft\GridCraft\" After="CraftDefaultMachineFolder" Sequence="ui" Condition="NOT INSTALLFOLDER AND ALLUSERS = 1 AND NOT VersionNT64" />
+packaging/windows/install-policy.wxi	  <SetProperty Id="INSTALLFOLDER" Action="CraftDefaultMachineFolder" Value="[%ProgramFiles(x86)]\ArtCraft\GridCraft\" After="CraftRestoreUserFolder" Sequence="ui" Condition="NOT INSTALLFOLDER AND ALLUSERS = 1 AND VersionNT64" />
+packaging/windows/install-policy.wxi	  <SetProperty Id="INSTALLFOLDER" Action="CraftDefaultMachineFolder" Value="[%ProgramW6432]\ArtCraft\GridCraft\" After="CraftRestoreUserFolder" Sequence="ui" Condition="NOT INSTALLFOLDER AND ALLUSERS = 1" />
+packaging/windows/install-policy.wxi	  <SetProperty Id="INSTALLFOLDER" Action="CraftDefaultUserFolder" Value="[LocalAppDataFolder]Programs\ArtCraft\GridCraft\" After="CraftDefaultMachineFolder32" Sequence="ui" Condition="NOT INSTALLFOLDER AND ALLUSERS &lt;&gt; 1" />
+packaging/windows/install-policy.wxi	  <SetProperty Id="INSTALLFOLDER" Action="CraftDefaultUserFolder" Value="[LocalAppDataFolder]Programs\ArtCraft\GridCraft\" After="CraftDefaultMachineFolder" Sequence="ui" Condition="NOT INSTALLFOLDER AND ALLUSERS &lt;&gt; 1" />
+packaging/windows/test-desktop-shortcut.ps1	$InstallDir = Join-Path $env:ProgramFiles 'ArtCraft\GridCraft'
+README.md	Copyright (c) 2026 ArtCraft Team and the GridCraft contributors. Required notices are in [NOTICE](NOTICE).
